@@ -1,13 +1,14 @@
 <div class="msg-fields">
   <h1>{{ title }}</h1>
   <p>Message :</p>
-  <textarea cols="30" rows="5">{{ message?.message }}</textarea>
+  <textarea cols="30" rows="5" [(ngModel)]="msg"></textarea>
   <label>
-    Date : {{ message?.date }}
-    <input type="date" />
+    Date :
+    <input type="date" [(ngModel)]="date" />
   </label>
   <label>
-    Is seen? {{ message?.isSeen }}
-    <input type="checkbox" />
+    Is seen?
+    <input type="checkbox" [(ngModel)]="isSeen" />
   </label>
+  <button (click)="addMsg()">Add</button>
 </div>

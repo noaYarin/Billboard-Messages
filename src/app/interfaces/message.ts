@@ -1,6 +1,6 @@
 export interface Message {
     id: string
     message: string;
-    date: Date;
+    date?: Date;
     isSeen: boolean;
 }

@@ -3,5 +3,7 @@
   margin: 10px;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  margin-bottom: 150px;
 }

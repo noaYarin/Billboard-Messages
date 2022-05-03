@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-
+import { Component } from '@angular/core';
+import { Message } from 'src/app/interfaces/message';
+import { MessageServiceService } from 'src/app/services/message-service.service';
 @Component({
   selector: 'app-messages-container',
   templateUrl: './messages-container.component.html',
   styleUrls: ['./messages-container.component.scss']
 })
 export class MessagesContainerComponent {
-  messages$: Observable<any[]>
-  constructor(firestore: Firestore) {
-    const messagesCollection = collection(firestore, 'billboard-messages');
-    this.messages$ = collectionData(messagesCollection);
+  messages: Message[] = []
+  constructor(private msgService: MessageServiceService) {
+    this.msgService.getMessages().subscribe((msg: Message[]) => {
+      this.messages = msg
+    })
   }
+
 }
+
