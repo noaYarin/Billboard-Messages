@@ -1,0 +1,23 @@
+.header {
+  background-color: #ebe7e7;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+.menu ul li {
+  font-size: 20px;
+  padding: 3px;
+  margin: 10px;
+}
+.menu ul li a {
+  text-decoration: none;
+}
+.menu ul li.active a {
+  color: gray;
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,AAAC,CACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,MAAM,CACpB",
+    "sources": [
+        "wrapper.component.scss"
+    ],
+    "names": [],
+    "file": "wrapper.component.css"
+}

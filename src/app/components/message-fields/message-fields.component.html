@@ -1,0 +1,13 @@
+<div class="msg-fields">
+  <h1>{{ title }}</h1>
+  <p>Message :</p>
+  <textarea cols="30" rows="5">{{ message?.message }}</textarea>
+  <label>
+    Date : {{ message?.date }}
+    <input type="date" />
+  </label>
+  <label>
+    Is seen? {{ message?.isSeen }}
+    <input type="checkbox" />
+  </label>
+</div>

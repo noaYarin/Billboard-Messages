@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "billboard-8a5e3": {
+      "hosting": {
+        "billboard": [
+          "billboard-8a5e3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "billboard-8a5e3"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,AAAC,CACV,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CACjB,UAAU,CAAE,KAAK,CAClB,AACD,AAAA,KAAK,AAAC,CACJ,UAAU,CAAE,GAAG,CACf,OAAO,CAAE,GAAG,CACb",
+    "sources": [
+        "message-fields.component.scss"
+    ],
+    "names": [],
+    "file": "message-fields.component.css"
+}
