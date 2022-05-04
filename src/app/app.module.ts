@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,7 +18,11 @@ import { MessagesContainerComponent } from './components/messages-container/mess
 import { MessageFieldsComponent } from './components/message-fields/message-fields.component';
 import { TitleComponent } from './components/title/title.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,17 +36,19 @@ import { HttpClientModule } from '@angular/common/http';
     MessagesContainerComponent,
     MessageFieldsComponent,
     TitleComponent,
-
   ],
   imports: [
-    HttpClientModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     FormsModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp({ ...environment.firebase })),
     provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

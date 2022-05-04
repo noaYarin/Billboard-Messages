@@ -9,10 +9,13 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
 export class MessagesContainerComponent {
   messages: Message[] = []
   constructor(private msgService: MessageServiceService) {
-    this.msgService.getMessages().subscribe((msg: Message[]) => {
-      this.messages = msg
-    })
+    this.msgService.getMessages().subscribe((n => {
+      this.messages = n.map((e => {
+        return {
+          id: e.payload.doc.id,
+          ...e.payload.doc.data() as {}
+        } as Message
+      }))
+    }))
   }
-
 }
-

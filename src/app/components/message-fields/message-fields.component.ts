@@ -1,6 +1,7 @@
 import { MessageServiceService } from './../../services/message-service.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Message } from 'src/app/interfaces/message';
+
 @Component({
   selector: 'app-message-fields',
   templateUrl: './message-fields.component.html',
@@ -21,7 +22,10 @@ export class MessageFieldsComponent {
       isSeen: this.isSeen,
       date: new Date(this.date)
     }
-    this.msgService.addMessage(msgObject).subscribe(message => this.messages.push(message));
+    this.msgService.addMessage(msgObject)
+      .then(res => this.messages.push(res))
+      .catch(err => console.log(err))
+
     this.msg = ''
     this.isSeen = false
   }
