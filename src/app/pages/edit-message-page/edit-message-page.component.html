@@ -1,2 +1,3 @@
 <app-title title="Edit Message"></app-title>
-<app-message-fields></app-message-fields>
+<app-message-fields [message]="message"></app-message-fields>
+<button (click)="saveMsg()">Save</button>

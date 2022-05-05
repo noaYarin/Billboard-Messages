@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Message } from 'src/app/interfaces/message';
+import { map } from 'rxjs';
+import { Message } from 'src/app/classes/message';
 import { MessageServiceService } from 'src/app/services/message-service.service';
 @Component({
   selector: 'app-messages-container',
@@ -9,13 +10,14 @@ import { MessageServiceService } from 'src/app/services/message-service.service'
 export class MessagesContainerComponent {
   messages: Message[] = []
   constructor(private msgService: MessageServiceService) {
-    this.msgService.getMessages().subscribe((n => {
-      this.messages = n.map((e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data() as {}
-        } as Message
-      }))
-    }))
+    this.msgService.getAllMessages().snapshotChanges().pipe(
+      map((changes: any[]) =>
+        changes.map((msg: any) =>
+          ({ id: msg.payload.doc.id, ...msg.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.messages = data;
+    });
   }
 }

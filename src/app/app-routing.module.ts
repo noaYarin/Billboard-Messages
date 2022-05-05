@@ -7,7 +7,7 @@ import { EditMessagePageComponent } from './pages/edit-message-page/edit-message
 const routes: Routes = [
   { path: '', component: BillboardPageComponent },
   { path: 'addMessage', component: AddMessagePageComponent },
-  { path: 'editMessage/:id', component: EditMessagePageComponent },
+  { path: 'editMessage/:msgId', component: EditMessagePageComponent },
   { path: '**', redirectTo: '' }
 ];
 
