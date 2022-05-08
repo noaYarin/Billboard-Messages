@@ -1,27 +1,33 @@
-# Billboard
+# Billboard Messages
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+## Application
 
-## Development server
+In this app you have CRUD operations Using routing.
+The database is a Firestore database that exists on the cloud in Firebase.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Screenshots
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+"@angular/animations": "~13.3.0",
+"@angular/common": "~13.3.0",
+"@angular/compiler": "~13.3.0",
+"@angular/core": "~13.3.0",
+"@angular/fire": "^7.3.0",
+"@angular/forms": "~13.3.0",
+"@angular/platform-browser": "~13.3.0",
+"@angular/platform-browser-dynamic": "~13.3.0",
+"@angular/router": "~13.3.0",
+"@firebase/firestore": "^3.4.8",
+"@types/uuid": "^8.3.4",
+"angular2": "^2.0.0-beta.21",
+"firebase": "^9.7.0",
+"rxjs": "~7.5.0",
+"tslib": "^2.3.0",
+"zone.js": "~0.11.4"
 
-## Build
+## Technologies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> SCSS
+> Angular
+> Firebase
