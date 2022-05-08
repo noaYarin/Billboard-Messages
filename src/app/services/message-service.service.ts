@@ -18,24 +18,12 @@ export class MessageServiceService {
     return this.msgInterface;
   }
   addMessage(msg: Message): any {
-    msg.id = this.generateUUID();
     return this.msgInterface.add({ ...msg });
+
   }
 
-  updateMessage(updatedmsg: any) {
-    this.msgDocument = this.msgInterface.doc(updatedmsg.id)
-    this.msgDocument.update(updatedmsg);
-  }
-
-  getMsgById(id: string) {
-    return this.msgInterface.valueChanges().subscribe(data => data.find((msgId => msgId.id = id)))
-  }
-
-  generateUUID(): string {
-    let randomUUID = uuidv4();
-    return randomUUID;
+  updateMessage(id: string, updatedmsg: any): Promise<void> {
+    return this.angularFs.collection('billboard-messages').doc(`editMessage/${id}`).update(updatedmsg);
   }
 
 }
-
-

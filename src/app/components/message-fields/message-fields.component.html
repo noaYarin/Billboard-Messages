@@ -10,5 +10,5 @@
     Is seen?
     <input type="checkbox" required [(ngModel)]="message.isSeen" />
   </label>
-  <button (click)="addMsg()">Add</button>
+  <button class="addBtn" *ngIf="editMode" (click)="addMsg()">Add</button>
 </div>

@@ -5,3 +5,14 @@
   margin: 10px;
   text-align: center;
 }
+.isSeen {
+  text-decoration: line-through;
+}
+.editBtn {
+  padding: 6px;
+  background-color: gray;
+  margin: 10px;
+}
+.editBtn a {
+  text-decoration: none;
+}

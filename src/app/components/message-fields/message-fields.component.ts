@@ -12,6 +12,7 @@ export class MessageFieldsComponent {
   @Input() title: string = ''
 
   constructor(private msgService: MessageServiceService) { }
+  @Input() editMode = true
   addMsg() {
     let msgObject = {
       id: '',

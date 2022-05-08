@@ -8,12 +8,16 @@ import { Router } from '@angular/router';
   templateUrl: './edit-message-page.component.html',
   styleUrls: ['./edit-message-page.component.scss']
 })
-export class EditMessagePageComponent {
+export class EditMessagePageComponent implements OnInit {
   @Input() message: Message = new Message('', '', new Date(), false);
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private messageServiceService: MessageServiceService) { }
+
+  ngOnInit() {
+
+  }
 
   saveMsg() {
     let msgId = this.route.snapshot.paramMap.get('msgId') ?? ''
@@ -23,7 +27,10 @@ export class EditMessagePageComponent {
       date: this.message.date,
       isSeen: this.message.isSeen
     };
-    this.messageServiceService.updateMessage(newMsg)
-    this.router.navigate(['..']);
+    this.messageServiceService.updateMessage(msgId, newMsg)
+      .then(() => this.router.navigate(['..'])
+      )
+      .catch((err) => console.log(err));
+
   }
 }

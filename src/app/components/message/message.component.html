@@ -1,7 +1,14 @@
 <div class="message">
-  <p>Message with ID : {{ message?.id }}</p>
+  <div *ngIf="message?.isSeen; else regular">
+    <p class="isSeen">Message with ID : {{ message?.id }}</p>
+  </div>
+  <ng-template #regular>
+    <p>Message with ID : {{ message?.id }}</p>
+  </ng-template>
   <p>Message : {{ message?.message }}</p>
   <p>Date : {{ message?.date }}</p>
   <p>Is seen? {{ message?.isSeen }}</p>
-  <button><a [routerLink]="['editMessage', message?.id]">Edit</a></button>
+  <button class="editBtn">
+    <a [routerLink]="['editMessage', message?.id]">Edit</a>
+  </button>
 </div>

@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,AAAC,CACP,OAAO,CAAE,GAAG,CACZ,gBAAgB,CAAE,IAAI,CACtB,MAAM,CAAE,IAAI,CACb",
     "sources": [
         "edit-message-page.component.scss"
     ],
