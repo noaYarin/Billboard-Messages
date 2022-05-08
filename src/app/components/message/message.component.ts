@@ -1,3 +1,4 @@
+import { MessageServiceService } from 'src/app/services/message-service.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Message } from 'src/app/classes/message';
 
@@ -8,5 +9,12 @@ import { Message } from 'src/app/classes/message';
 })
 export class MessageComponent {
   @Input() message?: Message
+  constructor(private messageService: MessageServiceService) { }
+
+  deleteMsg(id: string | undefined) {
+    this.messageService.deleteMessage(id ?? '')
+      .then(() => console.log('Message deleted'))
+      .catch((err: string) => console.log('Error deleting message: ' + err));
+  }
 
 }

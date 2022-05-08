@@ -6,9 +6,10 @@
     <p>Message with ID : {{ message?.id }}</p>
   </ng-template>
   <p>Message : {{ message?.message }}</p>
-  <p>Date : {{ message?.date }}</p>
+  <p>Date : {{ message?.date | date }}</p>
   <p>Is seen? {{ message?.isSeen }}</p>
   <button class="editBtn">
     <a [routerLink]="['editMessage', message?.id]">Edit</a>
   </button>
+  <button class="deleteBtn" (click)="deleteMsg(message?.id)">Delete</button>
 </div>

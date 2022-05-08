@@ -8,11 +8,13 @@
 .isSeen {
   text-decoration: line-through;
 }
+.deleteBtn,
 .editBtn {
   padding: 6px;
   background-color: gray;
   margin: 10px;
 }
-.editBtn a {
+.editBtn a,
+.deleteBtn a {
   text-decoration: none;
 }

@@ -6,11 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './add-message-page.component.html',
   styleUrls: ['./add-message-page.component.scss']
 })
-export class AddMessagePageComponent implements OnInit {
+export class AddMessagePageComponent {
   @Input() message: Message = new Message('', '', new Date(), false);
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

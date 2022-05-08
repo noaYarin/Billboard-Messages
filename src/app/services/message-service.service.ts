@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Message } from '../classes/message';
-import { v4 as uuidv4 } from 'uuid';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 
 @Injectable({
@@ -19,11 +18,13 @@ export class MessageServiceService {
   }
   addMessage(msg: Message): any {
     return this.msgInterface.add({ ...msg });
-
   }
-
-  updateMessage(id: string, updatedmsg: any): Promise<void> {
-    return this.angularFs.collection('billboard-messages').doc(`editMessage/${id}`).update(updatedmsg);
+  updateMessage(msgId: string, updatedmsg: any): Promise<void> {
+    return this.angularFs.collection('billboard-messages').doc(msgId).update(updatedmsg);
+  }
+  deleteMessage(msgId: string): Promise<any> {
+    return this.angularFs.collection('billboard-messages').doc(msgId).delete();
   }
 
 }
+
